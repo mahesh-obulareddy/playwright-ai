@@ -1,0 +1,47 @@
+{
+  "pageName": "Employee Creation Page",
+  "elements": [
+    {
+      "name": "first name field",
+      "locator": "input[name='firstName']",
+      "type": "textbox",
+      "required": true,
+      "special_interaction": null
+    },
+    {
+      "name": "middle name field",
+      "locator": "input[name='middleName']",
+      "type": "textbox",
+      "required": false,
+      "special_interaction": null
+    },
+    {
+      "name": "last name field",
+      "locator": "input[name='lastName']",
+      "type": "textbox",
+      "required": true,
+      "special_interaction": null
+    },
+    {
+      "name": "employee id field",
+      "locator": "input.oxd-input:nth-of-type(2)",
+      "type": "textbox",
+      "required": false,
+      "special_interaction": "Auto-generated if left empty"
+    },
+    {
+      "name": "save button",
+      "locator": "button[type='submit']",
+      "type": "button",
+      "required": false,
+      "special_interaction": null
+    },
+    {
+      "name": "success message",
+      "locator": ".oxd-toast--success",
+      "type": "label",
+      "required": false,
+      "special_interaction": "Disappears after 5 seconds"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "pageName": "Login Page",
+  "elements": [
+    {
+      "name": "username field",
+      "locator": "input[name='username']",
+      "type": "textbox",
+      "required": true,
+      "special_interaction": null
+    },
+    {
+      "name": "password field",
+      "locator": "input[name='password']",
+      "type": "textbox",
+      "required": true,
+      "special_interaction": null
+    },
+    {
+      "name": "login button",
+      "locator": "button[type='submit']",
+      "type": "button",
+      "required": false,
+      "special_interaction": null
+    },
+    {
+      "name": "error message",
+      "locator": ".oxd-alert-content-text",
+      "type": "label",
+      "required": false,
+      "special_interaction": null
+    }
+  ]
+}

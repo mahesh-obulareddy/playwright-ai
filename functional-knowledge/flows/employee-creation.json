@@ -1,0 +1,10 @@
+{
+  "flowName": "Employee creation",
+  "steps": [
+    "Navigate to PIM menu",
+    "Click Add Employee button",
+    "Fill required fields on Employee Creation Page",
+    "Click Save button",
+    "Verify success message on Employee List Page"
+  ]
+}
