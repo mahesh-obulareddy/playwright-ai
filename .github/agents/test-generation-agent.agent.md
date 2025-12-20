@@ -57,6 +57,7 @@ export class SomePage extends BasePage {
 ### Example Test Structure (Proper Page Object Model):
 ```typescript
 import { test, expect } from '../fixtures/fixtures';
+import { faker } from '@faker-js/faker';
 
 test.describe('Employee Creation', () => {
   
@@ -64,9 +65,9 @@ test.describe('Employee Creation', () => {
     // 1. Login using page object
     await loginPage.login('Admin', 'admin123');
     
-    // 2. Generate unique test data
-    const firstName = `Emp_${Date.now()}`;
-    const lastName = `User_${Math.random().toString(36).substring(7)}`;
+    // 2. Generate unique test data using Faker.js
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
     
     // 3. Navigate using page object methods
     await employeeListPage.navigateToPIM();
@@ -264,13 +265,15 @@ Create test file in `tests/` folder following the pattern:
 
 Examples (using Page Object Model - NO direct page.locator in tests):
 ```typescript
+import { faker } from '@faker-js/faker';
+
 test('should create employee with all required fields', async ({ loginPage, employeeListPage, employeeCreationPage }) => {
   // Step 1: Login
   await loginPage.login('Admin', 'admin123');
   
-  // Step 2: Generate unique test data
-  const firstName = `Emp_${Date.now()}`;
-  const lastName = `User_${Math.random().toString(36).substring(7)}`;
+  // Step 2: Generate unique test data using Faker.js
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
   
   // Step 3: Use page object methods only
   await employeeListPage.navigateToPIM();
@@ -312,13 +315,17 @@ test('should show error when first name is missing', async ({ loginPage, employe
 
 Examples (using Page Object Model):
 ```typescript
+import { faker } from '@faker-js/faker';
+
 test('should handle special characters in name', async ({ loginPage, employeeListPage, employeeCreationPage }) => {
   await loginPage.login('Admin', 'admin123');
-  const firstName = `Test-O'Brien_${Date.now()}`;
+  // Faker can generate names with various characters
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
   
   await employeeListPage.navigateToPIM();
   await employeeListPage.clickAddEmployee();
-  await employeeCreationPage.fillEmployeeDetails(firstName, 'User');
+  await employeeCreationPage.fillEmployeeDetails(firstName, lastName);
   await employeeCreationPage.save();
   
   await expect(employeeCreationPage.successMessage).toBeVisible();
@@ -368,10 +375,14 @@ test('test name', async ({ loginPage, employeePage }) => {
 
 ### 4. Generate Unique Test Data
 ```typescript
-// Use timestamps and random strings
-const firstName = `Emp_${Date.now()}`;
-const lastName = `User_${Math.random().toString(36).substring(7)}`;
-const email = `test_${Date.now()}@example.com`;
+// ALWAYS import and use Faker.js for test data
+import { faker } from '@faker-js/faker';
+
+const firstName = faker.person.firstName();
+const lastName = faker.person.lastName();
+const email = faker.internet.email();
+const phone = faker.phone.number();
+const address = faker.location.streetAddress();
 ```
 
 ### 5. Use Page Auto-Navigation & Page Objects
@@ -408,6 +419,7 @@ await expect(page).toHaveURL(/dashboard/);
 
 ```typescript
 import { test, expect } from '../fixtures/fixtures';
+import { faker } from '@faker-js/faker';
 
 test.describe('[Flow Name from JIRA/Request]', () => {
   
@@ -415,8 +427,8 @@ test.describe('[Flow Name from JIRA/Request]', () => {
     // 1. Login using page object
     await loginPage.login('Admin', 'admin123');
     
-    // 2. Generate unique test data
-    const data = `Test_${Date.now()}`;
+    // 2. Generate unique test data using Faker.js
+    const data = faker.person.fullName(); // or appropriate faker method
     
     // 3. ALL actions through page object methods
     await featurePage.navigate();
@@ -465,10 +477,11 @@ test.describe('[Flow Name from JIRA/Request]', () => {
 ### 3. Create Test File
 **Only after page objects and fixtures are ready:**
 - File location: `tests/[flow-name].spec.ts`
-- Import: `import { test, expect } from '../fixtures/fixtures';`
+- Import fixtures: `import { test, expect } from '../fixtures/fixtures';`
+- **REQUIRED**: Import Faker: `import { faker } from '@faker-js/faker';`
 - Use injected page object fixtures only
 - NO `page.locator()` in tests - use page object methods
-- Generate unique test data
+- Generate unique test data using Faker.js methods
 - Follow existing test patterns exactly
 
 ### Pre-Creation Checklist:
