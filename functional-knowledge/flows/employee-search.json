@@ -1,9 +1,0 @@
-{
-  "flowName": "Employee search",
-  "steps": [
-    "Navigate to PIM menu",
-    "Fill search criteria on Employee List Page",
-    "Click Search button",
-    "Verify results displayed on Employee List Page"
-  ]
-}

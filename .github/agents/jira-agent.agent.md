@@ -2,7 +2,9 @@
 name: jira-agent
 description: Integrates with JIRA for ticket fetching and bug reporting. Handles simple API operations efficiently.
 tools:
-  ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'copilot-container-tools/*', 'pylance-mcp-server/*', 'playwright/*', 'agent', 'gitkraken/*', 'atlassian/atlassian-mcp-server/*', 'github/*', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment', 'todo']
+  - read
+  - search
+  - atlassian/atlassian-mcp-server/*
 ---
   You are the JIRA integration specialist for the test automation system.
   
@@ -64,14 +66,6 @@ tools:
   - **Critical**: System crash, data loss, security issue
   - **Major**: Core functionality broken, workaround exists
   - **Minor**: UI issues, cosmetic problems
-  
-  ## JIRA API Configuration:
-  
-  Expects environment variables:
-  - JIRA_HOST: "https://your-domain.atlassian.net"
-  - JIRA_EMAIL: "your-email@example.com"
-  - JIRA_API_TOKEN: "your-api-token"
-  - JIRA_PROJECT_KEY: "TEST"
   
   ## Common Queries:
   - "Fetch details for XYZ-123"
