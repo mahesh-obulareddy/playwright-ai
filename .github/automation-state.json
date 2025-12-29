@@ -1,0 +1,67 @@
+{
+  "currentStep": 1,
+  "flowName": "Employee creation",
+  "status": "in-progress",
+  "warnings": [],
+  "jira": {
+    "ticketId": null,
+    "summary": null,
+    "acceptanceCriteria": [],
+    "testData": {},
+    "bugsCreated": []
+  },
+  "knowledge": {
+    "existingPages": [],
+    "existingFlow": null,
+    "savedPages": [],
+    "savedFlow": null
+  },
+  "exploration": {
+    "pages": [],
+    "flow": null,
+    "bugs": [],
+    "performance": {
+      "pageLoadTime": 0,
+      "timeToInteractive": 0,
+      "slowElements": [],
+      "totalExplorationTime": 0
+    }
+  },
+  "testCases": [],
+  "automation": {
+    "filesCreated": [],
+    "filesUpdated": [],
+    "testCount": 0,
+    "testResults": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0
+    },
+    "fixes": [],
+    "coverage": {
+      "pages": {
+        "total": 0,
+        "automated": 0,
+        "names": []
+      },
+      "elements": {
+        "total": 0,
+        "covered": 0,
+        "uncovered": 0,
+        "missing": []
+      },
+      "flows": {
+        "total": 0,
+        "automated": 0,
+        "names": []
+      },
+      "testTypes": {
+        "positive": 0,
+        "negative": 0,
+        "edge": 0,
+        "total": 0
+      }
+    }
+  },
+  "completedSteps": []
+}

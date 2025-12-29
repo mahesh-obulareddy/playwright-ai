@@ -7,3 +7,9 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .playwright-mcp/
+
+# Agent runtime artifacts (don't commit these!)
+.github/logs/
+.github/automation-state.backup.json
+functional-knowledge/.history/
+functional-knowledge/screenshots/
